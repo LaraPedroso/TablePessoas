@@ -4,8 +4,7 @@
     try {
         $dsn = "pgsql:host=$host;port=5432;dbname=$db;";
         $pdo = new PDO($dsn, $user, $password, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
-        $pessoas = $pdo->query('SELECT * FROM pessoas');
-
+        $pessoas = $pdo->query('SELECT * FROM pessoas ORDER BY id' );
 
     } catch (PDOException $e) {
         die($e);

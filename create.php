@@ -1,9 +1,7 @@
 <?php
-    session_start();
+    // session_start();
     require_once 'serv.php';
-    // require_once 'pessoas.php';
 
-    // $inserir = filter_input(INPUT_POST, 'Inserir', FILTER_SANITIZE_STRING);
 
     try {
         $nome = $_POST['nome'];
@@ -13,7 +11,7 @@
         
 
         if($nome == null && $idade == null && $cpf == null || $cidade == null){
-           
+            
         } else {
             
             $dsn = "pgsql:host=$host;port=5432;dbname=$db;";
@@ -25,7 +23,7 @@
                 'cpf'   => $cpf,
                 'cidade'=> $cidade));
                 
-                echo "<p style = 'color: green'> $nome CADASTRADO COM SUCESSO";
+                echo "<p style = 'color: green'> ".strtoupper($pessoa[nome])."CADASTRADO COM SUCESSO";
                
                 $sec = '1';
                 header("Refresh: $sec; url=pessoas.php");
