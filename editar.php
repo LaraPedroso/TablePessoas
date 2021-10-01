@@ -18,7 +18,7 @@
               if($stmt->execute()){
                   if($stmt->rowCount() == 1){
                       $row = $stmt->fetch(PDO::FETCH_ASSOC);
-                    
+                      
                        $nome = $row['nome'];
                        $idade = $row['idade'];
                        $cpf = $row['cpf'];
@@ -31,11 +31,12 @@
         
      
         }
-
-        echo " <form class='col-md-6 offset-md-4 action='atualizar.php'>";
-        echo " <div class='col-md-2 '>";
+        
+        echo "<div class='container-md'>";
+        echo " <form class='col-md-6' action='atualizar.php'>";
+        echo " <div>";
         echo " <label for='validationServer01'>Nome:</label>";
-        echo "<input type='hidden' name='id' value='$id'>";
+        echo " <input type='hidden' name='id' value='$id'>";
         echo " <input type='text' class='rounded-pill form-control is-valid border border-dark' id='validationServer01' name='nome' value='$nome'>";     
         echo " <label for='validationServer02'>Idade:</label>";
         echo " <input type='text' class='rounded-pill form-control is-valid border border-dark' id='validationServer02' name='idade' value='$idade'>";
@@ -47,7 +48,6 @@
         echo " <a href='pessoas.php' class='btn btn-outline-dark border border-dark rounded-pill'>Voltar</a>";
         echo " </div>";
         echo " </form>";
-        
 
 ?>
  
